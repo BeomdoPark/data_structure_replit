@@ -1,8 +1,8 @@
 class Node():
 
-  def __init__(self):
-    self.data = None
-    self.link = None
+    def __init__(self):
+        self.data = None
+        self.link = None
 
 
 node1 = Node()
@@ -27,5 +27,5 @@ node4.link = node5
 current = node1
 print(current.data, end=' ')
 while current.link != None:
-  current = current.link
-  print(current.data, end=' ')
+    current = current.link
+    print(current.data, end=' ')
