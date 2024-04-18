@@ -1,4 +1,4 @@
-class Node():
+class Node:
 
     def __init__(self):
         self.data = None
@@ -9,10 +9,10 @@ def printNodes(start):
     current = start
     if current.link == None:
         return
-    print(current.data, end=' ')
+    print(current.data, end=" ")
     while current.link != start:
         current = current.link
-        print(current.data, end=' ')
+        print(current.data, end=" ")
     print()
 
 
@@ -31,7 +31,7 @@ def insertNode(findData, insertData):
         return
 
     current = head
-    while current.linkl != head:
+    while current.link != head:
         pre = current
         current = current.link
         if current.data == findData:
@@ -48,7 +48,7 @@ def insertNode(findData, insertData):
 
 memory = []
 head, current, pre = None, None, None
-dataArray = ['다현', '정연', '쯔위', '사나', '지효']
+dataArray = ["다현", "정연", "쯔위", "사나", "지효"]
 
 if __name__ == "__main__":
 

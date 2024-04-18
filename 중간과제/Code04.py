@@ -1,37 +1,39 @@
-import sys
-
-
+# 4번. 연결 리스트의 팰린드롬 판단
 class Node:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self):
+        self.data = None
         self.link = None
 
 
 def is_palindrome(head):
-    palindrome_str = ""
     current = head
-    while current != None:
-        palindrome_str += current.data
+    data_list = []
+    while current.link != None:
+        data_list.append(current.data)
         current = current.link
-    if palindrome_str == palindrome_str[::-1]:
-        return True
-    else:
-        return False
+    return "true" if data_list == data_list[::-1] else "false"
 
 
-if __name__ == __main__:
+memory = []
+head, current, pre = None, None, None
+data_array = []
 
-    data_array = []
 
-    print("숫자 입력, 엔터 두번 입력 시 종료")
-
+if __name__ == "__main__":
+    print("linked_list = 숫자 하나씩 입력, 엔터 두번 입력 시 종료")
     while True:
-        user = sys.stdin.readline()
-        if user == "\n":
+        user_input = input()
+        if not user_input:
             break
         else:
-            user = user.strip()
+            data = int(user_input.strip())
             node = Node()
-            head = node
-            data_array.append(user)
-    is_palindrome(data_array)
+            data_array.append(data)
+            if head == None:
+                head = node
+            else:
+                current = head
+                while current.link:
+                    current = current.link
+                current.link = node
+    print(is_palindrome(head))
