@@ -5,18 +5,6 @@ class Node:
         self.link = None
 
 
-# head노드 입력시 2개씩 묶어서 스왑. 반환값 없음
-def swap_pairs(start):
-    current = start
-    while current != None:  # 뒤에 노드가 존재할 때,
-        temp_data = current.data  # 현재노드 데이터 임시저장
-        current.data = current.link.data  # 다음 노드 데이터를 현재 노드 데이터로 변경
-        current.link.data = temp_data  # 임시저장한 데이터를 다음 노드 데이터로 변경
-        current = (
-            current.link.link if current.link.link.link else None
-        )  # 두칸 점프 , 조건문 넣으면 홀수개 입력도 스왑 가능함
-
-
 def printNodes(start):
     current = start  # head로 초기화
     if current == None:
@@ -53,14 +41,24 @@ if __name__ == "__main__":
     head = node
     memory.append(node)
 
-    # 두 번째 이후 노드를 생성
-    for data in data_array[1:]:
+    # 두 번째 이후 홀수 번째 노드 생성
+    for data in data_array[2::2]:
         pre = node
         node = Node()
         node.data = data
         pre.link = node
         memory.append(node)
 
-    swap_pairs(head)  # 스왑
-    print("스왑 후\t\t: ", end="")
+        # 위의 for문 탈출 시의 마지막 node는
+        # 아래 for문 동작 시,pre와 자동으로 이어짐
+        # (node의 변수 Scope생각해보기)
+
+    # 두 번째 이후 짝수 번째 노드 생성
+    for data in data_array[1::2]:
+        pre = node
+        node = Node()
+        node.data = data
+        pre.link = node
+        memory.append(node)
+
     printNodes(head)  # 출력
