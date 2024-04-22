@@ -1,5 +1,6 @@
-# 5번. Pair 단위의 노드 스왑
+# 5번. Pair 단위의 노드 스왑 -> 짝수 개의 입력만 구현했음
 class Node:
+
     def __init__(self):
         self.data = None
         self.link = None
@@ -8,13 +9,11 @@ class Node:
 # head노드 입력시 2개씩 묶어서 스왑. 반환값 없음
 def swap_pairs(start):
     current = start
-    while current != None:  # 뒤에 노드가 존재할 때,
+    while current != None:
         temp_data = current.data  # 현재노드 데이터 임시저장
         current.data = current.link.data  # 다음 노드 데이터를 현재 노드 데이터로 변경
         current.link.data = temp_data  # 임시저장한 데이터를 다음 노드 데이터로 변경
-        current = (
-            current.link.link if current.link.link.link else None
-        )  # 두칸 점프 , 조건문 넣으면 홀수개 입력도 스왑 가능함
+        current = current.link.link  # 두칸 점프
 
 
 def printNodes(start):
@@ -35,7 +34,6 @@ def printNodes(start):
 memory = []
 head, current, pre = None, None, None
 data_array = []
-
 
 if __name__ == "__main__":
     print("linked_list = 숫자 하나씩 입력, 엔터 두번 입력 시 종료")

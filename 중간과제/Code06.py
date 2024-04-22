@@ -1,5 +1,6 @@
 # 6번. 홀짝 연결 리스트 문제
 class Node:
+
     def __init__(self):
         self.data = None
         self.link = None
@@ -24,9 +25,8 @@ memory = []
 head, current, pre = None, None, None
 data_array = []
 
-
 if __name__ == "__main__":
-    print("linked_list = 숫자 하나씩 입력, 엔터 두번 입력 시 종료")
+    print("linked_list = 숫자 하나씩 입력 / 엔터 두번 입력 시 종료")
     while True:
         user_input = input()
         if not user_input:

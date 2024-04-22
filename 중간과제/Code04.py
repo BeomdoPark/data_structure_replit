@@ -1,5 +1,6 @@
 # 4번. 연결 리스트의 팰린드롬 판단
 class Node:
+
     def __init__(self):
         self.data = None
         self.link = None
@@ -18,7 +19,6 @@ memory = []
 head, current, pre = None, None, None
 data_array = []
 
-
 if __name__ == "__main__":
     print("linked_list = 숫자 하나씩 입력, 엔터 두번 입력 시 종료")
     while True:
@@ -36,4 +36,5 @@ if __name__ == "__main__":
                 while current.link:
                     current = current.link
                 current.link = node
+    print("입력된 데이터\t:", *data_array)
     print(is_palindrome(head))
