@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
         # 위의 for문 탈출 시의 마지막 node는
         # 아래 for문 동작 시,pre와 자동으로 이어짐
-        # (node의 변수 Scope생각해보기)
+        # (node의 변수 Scope는 main 안에서 유효)
 
     # 두 번째 이후 짝수 번째 노드 생성
     for data in data_array[1::2]:
