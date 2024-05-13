@@ -9,7 +9,7 @@ def print_nodes():
 
 memory = []  # linked list의 data를 저장할 공간
 head, pre, current = None, None, None
-data_array = [1, 2, 3, 4]  # 유저에게 받는 data
+data_array = [1, 2, 3, 4]  # linkedlist를 구성할 데이터 
 
 
 if __name__ == "__main__":
