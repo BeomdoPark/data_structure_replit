@@ -14,9 +14,8 @@ class myStack():
             data = self.main_queue.dequeue()
             #뽑은값은 sub_queue에 넣기
             self.sub_queue.enqueue(data)
-        #하나 남은 값을 top_data에 저장
+        #하나 남은 값을 top_data에 저장 후 서브 큐에 넣기
         top_data = self.main_queue.peek()
-        #서브큐에 넣기
         data = self.main_queue.dequeue()
         self.sub_queue.enqueue(data)
 
@@ -114,7 +113,8 @@ if __name__ == '__main__':
         else:
             print("* 잘못된 입력입니다. *")
 
-        print("현재 queue = ", my_stack.main_queue.queue, end="\n\n")
+        print("현재 queue = ", my_stack.main_queue.queue)
+        print("현재 출력 = ", result_list, end="\n\n")
         select = input("push(1) / pop(2) / top(3) / empty(4) / exit(X) :")
 
     # result_list.append(my_stack.push(1))
@@ -122,4 +122,4 @@ if __name__ == '__main__':
     # result_list.append(my_stack.top())
     # result_list.append(my_stack.pop())
     # result_list.append(my_stack.empty())
-    print(result_list)
+    print("최종 출력 = ", result_list)
